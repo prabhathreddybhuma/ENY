@@ -1,0 +1,65 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Earth Needs You</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-page">
+    <nav class="navbar">
+        <div class="nav-brand">Earth Needs You</div>
+        <div class="nav-user">
+            <span id="user-name"></span>
+            <button onclick="logout()" class="btn btn-outline">Logout</button>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <!-- Date Selection Section -->
+        <section id="date-selection" class="date-selection-section">
+            <h2>Select Your Preferred Sunday</h2>
+            <p>Choose a Sunday that works best for you to participate in the cleanup drive</p>
+            <div class="sunday-selector">
+                <select id="sunday-picker" class="form-select">
+                    <option value="">Select a Sunday</option>
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+            </div>
+        </section>
+
+        <!-- Locations Section (Initially Hidden) -->
+        <section id="locations-section" style="display: none;">
+            <header class="dashboard-header">
+                <h2>Available Cleanup Locations</h2>
+                <p>Select a location for <span id="selected-date-display"></span></p>
+            </header>
+
+            <div id="locations-grid" class="locations-grid">
+                <!-- Location cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Booking Confirmation Modal -->
+        <div id="confirmation-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Confirm Your Participation</h3>
+                    <button onclick="closeModal()" class="close-btn">&times;</button>
+                </div>
+                <div id="booking-details" class="modal-body">
+                    <!-- Booking details will be inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button onclick="confirmBooking()" class="btn btn-primary">Confirm Participation</button>
+                    <button onclick="closeModal()" class="btn btn-outline">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
