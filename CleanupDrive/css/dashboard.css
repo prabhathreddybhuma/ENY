@@ -1,323 +1,52 @@
-/* dashboard.css */
-:root {
-    --primary-color: #2ecc71;
-    --primary-dark: #27ae60;
-    --secondary-color: #3498db;
-    --background-color: #f5f6fa;
-    --text-color: #2d3436;
-    --text-light: #636e72;
-    --border-color: #dcdde1;
-    --shadow: 0 2px 4px rgba(0,0,0,0.1);
-    --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* Dashboard Layout */
-.dashboard-page {
-    min-height: 100vh;
-    background-color: var(--background-color);
-}
-
-.dashboard-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 20px;
-}
-
-/* Navigation */
-.navbar {
-    background: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.nav-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-}
-
-.nav-user {
-    display: flex;
-    align-items: center;
+/* Add this to your dashboard.css */
+.sunday-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
+    padding: 1rem 0;
 }
 
-/* Date Selection Section */
-.date-selection-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 2rem;
-}
-
-.date-selection-section h2 {
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
-}
-
-.date-selection-section p {
-    color: var(--text-light);
-    margin-bottom: 1.5rem;
-}
-
-.sunday-selector {
-    max-width: 400px;
-}
-
-.form-select {
-    width: 100%;
-    padding: 0.8rem;
+.date-box {
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 4px;
-    font-size: 1rem;
-    color: var(--text-color);
-    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.form-select:focus {
-    outline: none;
+.date-box:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
     border-color: var(--primary-color);
 }
 
-/* Locations Section */
-.locations-section {
-    margin-top: 2rem;
+.date-box.selected {
+    background: var(--primary-color);
+    color: var(--background-dark);
+    border-color: var(--primary-color);
 }
 
-.dashboard-header {
-    margin-bottom: 2rem;
-}
-
-.dashboard-header h2 {
-    color: var(--text-color);
+.date-box .day {
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-.dashboard-header p {
+.date-box .date {
+    font-size: 0.9rem;
     color: var(--text-light);
 }
 
+.date-box.selected .date {
+    color: var(--background-dark);
+}
+
+/* Updated locations grid for 6 locations */
 .locations-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 0.5rem;
-}
-
-/* Location Cards */
-.location-card {
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.location-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.location-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.location-info {
-    padding: 1.5rem;
-}
-
-.location-info h3 {
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
-}
-
-.location-info p {
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-}
-
-.slots-left {
-    color: var(--primary-color);
-    font-weight: bold;
-    margin: 1rem 0;
-}
-
-/* No Locations Message */
-.no-locations {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-}
-
-.no-locations p {
-    color: var(--text-light);
-    margin-bottom: 0.5rem;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-content {
-    background: white;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    box-shadow: var(--card-shadow);
-}
-
-.modal-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal-header h3 {
-    color: var(--text-color);
-    margin: 0;
-}
-
-.close-btn {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-light);
-}
-
-.modal-body {
-    padding: 1.5rem;
-}
-
-.booking-details p {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.modal-footer {
-    padding: 1.5rem;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-}
-
-/* Buttons */
-.btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: var(--primary-dark);
-}
-
-.btn-outline {
-    background: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.btn-outline:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .dashboard-container {
-        padding: 1rem;
-    }
-
-    .navbar {
-        padding: 1rem;
-    }
-
-    .locations-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .date-selection-section {
-        padding: 1.5rem;
-    }
-
-    .modal-content {
-        width: 95%;
-        margin: 1rem;
-    }
-
-    .modal-footer {
-        flex-direction: column;
-    }
-
-    .modal-footer .btn {
-        width: 100%;
-    }
-}
-
-/* Utilities */
-.hidden {
-    display: none;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.mb-1 {
-    margin-bottom: 0.5rem;
-}
-
-.mb-2 {
-    margin-bottom: 1rem;
-}
-
-.mb-3 {
-    margin-bottom: 1.5rem;
-}
-
-.mt-1 {
-    margin-top: 0.5rem;
-}
-
-.mt-2 {
-    margin-top: 1rem;
-}
-
-.mt-3 {
-    margin-top: 1.5rem;
 }
