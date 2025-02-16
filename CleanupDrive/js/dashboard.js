@@ -74,8 +74,8 @@ function handleDateSelection(event) {
 const locations = [
     {
         id: 1,
-        name: 'Beach Cleanup - Miami Shore',
-        image: 'images/beach.jpg',
+        name: 'Lake Cleanup - Khajaguda Hills',
+        image: 'public/img1.jpeg',
         description: 'Help clean our beautiful beaches',
         time: '09:00 AM',
         slots: {
@@ -87,7 +87,7 @@ const locations = [
     {
         id: 2,
         name: 'City Park Restoration',
-        image: 'images/park.jpg',
+        image: 'public/img2.jpeg',
         description: 'Restore our city parks to their natural beauty',
         time: '10:00 AM',
         slots: {
@@ -95,7 +95,21 @@ const locations = [
             '2025-03-09': 12,
             '2025-03-16': 8
         }
+    },
+    {
+        id: 2,
+        name: 'Dugram Cheruvu-Lake Cleanup',
+        image: 'public/img2.jpeg',
+        description: 'Restore our city parks to their natural beauty',
+        time: '10:00 AM',
+        slots: {
+            '2025-03-16': 14,
+            '2025-03-23':20,
+            '2025-03-30':30
+        }
     }
+
+
 ];
 
 // Display locations for selected date
@@ -115,6 +129,9 @@ function displayLocations(selectedDate) {
             </div>
         `;
         return;
+    } else{
+        locationsGrid.innerHTML = `
+        <p>Select a location for <span id="selected-date-display"></span></p>`
     }
 
     locationsGrid.innerHTML = availableLocations.map(location => `
@@ -163,7 +180,7 @@ function showConfirmation(locationId, selectedDate) {
 
 // Close modal
 function closeModal() {
-    const modal = document.getElementById('confirmation-modal');
+    const modal = document.getElementById('locations-section');
     if (modal) {
         modal.style.display = 'none';
     }

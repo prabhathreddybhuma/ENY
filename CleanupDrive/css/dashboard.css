@@ -50,3 +50,83 @@
     gap: 1.5rem;
     padding: 0.5rem;
 }
+/* Location Card Styles */
+/* Location Card Styles */
+.location-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: calc(25vw - 15px); /* 25% of viewport width minus total margin */
+    min-width: 250px;
+    margin: 5px; /* Margin of 5px around each card */
+    box-sizing: border-box; /* Ensures padding and border are included in width */
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.location-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.location-info {
+    padding: 1rem;
+}
+
+.location-info h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.location-info p {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.slots-left {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+
+/* Updated Grid Layout */
+.locations-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: space-between; /* Evenly distribute space */
+    gap: 20px; /* Adjust space between items */
+    min-height: 100vh; /* Ensures full viewport height */
+    padding: 20px;
+}
+
+.date-selection-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px; /* Adds spacing between elements inside the section */
+}
+
+.sunday-selector {
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+}
+.modal-footer{
+    margin-top: 30px;
+}
