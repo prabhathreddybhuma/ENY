@@ -52,9 +52,9 @@ For any queries regarding the project, please contact:
 - 📧 Email: [sriprabhathreddybhuma@gmail.com]
 
 ## 🙏 Acknowledgments
-- 🌍 Earth Needs You for the opportunity to contribute
-- 👥 All the volunteers who participate in cleanup drives
-- 🌟 The open-source community for their invaluable resources
+- 🌍 Earth Needs You for the opportunity to contribute.
+- 👥 All the volunteers who participate in cleanup drives.
+- 🌟 The open-source community for their invaluable resources.
 
 
 Made with 💚 for Earth Needs You
