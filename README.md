@@ -57,5 +57,5 @@ For any queries regarding the project, please contact:
 - 🌟 The open-source community for their invaluable resources.
 
 
-Made with 💚 for Earth Needs You
+Made with 💚 for Earth Needs You.
 #SaveEarth 🌍 #Community 🤝 #CleanupDrive 🧹
